@@ -159,13 +159,17 @@ class CuTube extends React.Component {
                                             <li data-target="#carousel-example-generic" data-slide-to="6"></li>
                                             <li data-target="#carousel-example-generic" data-slide-to="7"></li>
                                             <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+                                            <li data-target="#carousel-example-generic" data-slide-to="9"></li>
+                                            <li data-target="#carousel-example-generic" data-slide-to="10"></li>
+                                            <li data-target="#carousel-example-generic" data-slide-to="11"></li>
+                                            <li data-target="#carousel-example-generic" data-slide-to="12"></li>
 
                                         </ol>
 
                                         <div className="carousel-inner" role="listbox" >
                                             <div className="item active">
                                                 <div className="slider_overlay">
-                                                    <img className="blog-img" src="https://wallpapersite.com/images/pages/pic_w/11297.jpg" title="Wonder Woman" alt="Wonder Woman"></img>
+                                                    <img className="blog-img" src="https://images.alphacoders.com/674/thumb-1920-674351.jpg" title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
                                                         <div className="slider_text" style={{ marginTop: '-63%' }}>
                                                             <h3 className='logoName'>FilmIn</h3>

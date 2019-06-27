@@ -140,20 +140,36 @@ export const Data = [
 
 const Images = [
     {
+        imgUrl:'https://wallpapercave.com/wp/wp3869435.jpg',
+        alte:'bumblebee'
+    },
+    {
+        imgUrl:'https://images3.alphacoders.com/948/thumb-1920-948864.jpg',
+        alte:'venom'
+    },
+    {
         imgUrl:'https://images8.alphacoders.com/101/thumb-1920-1010617.jpg',
         alte: 'Ironman'
     },
     {
-        imgUrl:'https://images.alphacoders.com/674/thumb-1920-674351.jpg',
-        alte: 'Avatar'
+        imgUrl:'https://wallpapercave.com/wp/wp4005262.jpg',
+        alte:'geetha govindam'
     },
     {
         imgUrl:'https://wallpapercave.com/wp/kZYnzbJ.jpg',
         alte: '300'
     },
     {
+        imgUrl:'https://cdn1.marathistars.com/wp-content/uploads/2018/04/Farzand-Marathi-Movie-Shivaji-maharaj.jpg',
+        alte:'farzand'
+    },
+    {
         imgUrl:'https://wallpapersite.com/images/pages/pic_w/17057.jpg',
         alte: 'How to train your dragon'
+    },
+    {
+        imgUrl:'https://wallpapersite.com/images/pages/pic_w/11297.jpg',
+        alte: 'Wonder woman'
     },
     {
         imgUrl:'https://free4kwallpapers.com/uploads/wallpaper/alia-bhatt-in-humpty-sharma-ki-dulhania-wallpaper-1280x720-wallpaper.jpg',
@@ -166,6 +182,10 @@ const Images = [
     {
         imgUrl:'https://wallpapersite.com/images/pages/pic_w/7179.jpg',
         alte: 'Bahubali'
+    },
+    {
+        imgUrl:'https://wallpapercave.com/wp/wp1836759.jpg',
+        alte: 'atom'
     }
     
 ];
