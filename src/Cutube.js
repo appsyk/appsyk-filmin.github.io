@@ -148,7 +148,7 @@ class CuTube extends React.Component {
                             <div >
                                 <section id="slider">
 
-                                    <div style={{ margin: '1%' }} id="carousel-example-generic" className="carousel slide carousel-fade" data-ride="carousel" data-interval="1900">
+                                    <div style={{ margin: '1%' }} id="carousel-example-generic" className="carousel slide carousel-fade" data-ride="carousel" data-interval="2800">
                                         <ol className="carousel-indicators">
                                             <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
                                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
