@@ -76,7 +76,7 @@ class FilmInfo extends React.Component {
                                             <ul className="list-group text-left">
                                                 <li className="list-group-item"><span className="pull-right">{this.props.production} </span> <span className="text-muted text-uppercase">Company:</span></li>
                                                 <li className="list-group-item"><span className="pull-right">{this.props.director}</span> <span className="text-muted text-uppercase">Director:</span></li>
-                                                <li className="list-group-item"><span className="pull-right"><a href={this.props.website}>{this.props.website}</a></span> <span className="text-muted text-uppercase">Website:</span></li>
+                                                <li className="list-group-item"><span className="pull-right"><a href={this.props.website} target="_blank" rel="noopener noreferrer" >{this.props.website}</a></span> <span className="text-muted text-uppercase">Website:</span></li>
                                             </ul>
                                         </div>
                                         <div className="clearfix"></div>

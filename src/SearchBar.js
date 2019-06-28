@@ -36,10 +36,10 @@ class SearchBar extends React.Component {
         return (
 
             <div style={{ marginRight: '1%', marginLeft: '1%', marginTop: '0.5%' }}>
-                <nav className="navbar navbar-expand-md navbar-dark navbar-fixed-top bg-dark, navBackColor">
-                    <img className='offspin' src='http://icons.iconarchive.com/icons/alecive/flatwoken/128/Apps-Google-Movies-icon.png' alt="u r watching" width='50px' height='50px' />
+                <nav className="navbar navbar-expand-md navbar-dark navbar-fixed-top bg-dark, navBackColor ">
+			<img className='offspin logo-adjust' src='https://www.iconsdb.com/icons/preview/guacamole-green/film-xxl.png' alt="u r watching" width='35px' height='35px' style={{ boxShadow : '4px 4px 4px rgb(0, 0, 0)' }} />
                 
-                    <a href='/'><h2 className="filmIn logoName" style={{ color: '#02CBFC', marginTop: '2vh' }} >FilmIn</h2></a>
+                    <a href='/'><h2 className="filmIn logoName logo-nm-ad" style={{ color: '#02CBFC', marginTop: '2vh' }} >FilmIn</h2></a>
 
                     <form className="form-inline, searchBar myHomefont" onSubmit={this.onSubmitHandle}>
                         <input className="form-control mr-sm-4 col-sm-12"
