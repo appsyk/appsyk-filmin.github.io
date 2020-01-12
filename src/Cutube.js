@@ -46,10 +46,11 @@ class CuTube extends React.Component {
 
     onTermSubmit = async (term) => {
 
-        const response1 = await axios.get(`https://www.omdbapi.com/?t=${term}&apikey=aabca0d`, {
+        const response1 = await axios.get(`https://www.omdbapi.com/?t=${term}&apikey=af7bfde9`, {
+            // http://www.omdbapi.com/?i=tt3896198&apikey=af7bfde9
             params: { query: term },
         });
-
+console.log(response1)
         this.setState({
             title: response1.data.Title,
             poster: response1.data.Poster,
@@ -89,7 +90,7 @@ class CuTube extends React.Component {
     render() {
         // var name = this.state.title + this.state.year;
         return (
-            <div className="" style={{ backgroundColor: '#031b2b' }}>
+            <div className="container" style={{ backgroundColor: '#031b2b' }}>
                 <div className="">
 
                     <SearchBar onFormSubmitProp={this.onTermSubmit} spinStop={this.state.response} />
@@ -130,9 +131,12 @@ class CuTube extends React.Component {
                                 </div> */}
                                 {/* <div className='col-md-6 col-sm-12'>
                                 <VideoDetail video={this.state.selectedVid} />
-
+col-md-3 col-sm-6, vidListAlign
                                 </div> */}
-                                <div className='col-md-3 col-sm-6, vidListAlign' >
+                                {/* <div className='' >
+                                    <VideoDetail />
+                                </div> */}
+                                <div className='container' >
                                     <VideoList onSelectVid={this.onVidSelect} vidList={this.state.vids} />
                                 </div>
 

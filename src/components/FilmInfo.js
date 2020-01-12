@@ -51,7 +51,7 @@ class FilmInfo extends React.Component {
                                         : (<img className='imgD' alt="Image_is_not_Available" style={{ boxShadow : '0 0 10px 5px #020808' }} src={this.props.poster} />)}
                                 </div>
 
-                                <div className="col-md-6 text-center"><br />
+                                <div className="col-md-9 text-center"><br />
                                     <div className="movie-actors, myHomefont" style={{ color: '#EEEEEE' }}>{this.props.actors} </div><br />
                                     <div className="movie-desc, myHomefont" style={{ color: '#CAD0D2' }} >{this.props.plot}</div><br />
 
