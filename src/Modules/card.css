@@ -1,7 +1,7 @@
 .video-card{
   margin: 10px;
-  height: 160px !important;
-  width: 155px !important;
+  height: 170px !important;
+  width: 194px !important;
   background: rgb(172, 228, 245);
   padding: 7px;
   border-radius: 5px;
@@ -152,7 +152,7 @@ position: relative;
 
   .navBackColor{
       background-color: #073946;
-      height: 9vh;
+      /* height: 9vh; */
   }
 
   .movie-main-info .movie-desc {
@@ -187,6 +187,8 @@ position: relative;
   font-family: 'Lobster', bold;
   font-size: 40px;
   text-shadow: 4px 4px 4px rgb(0, 0, 0);
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .myCard{
