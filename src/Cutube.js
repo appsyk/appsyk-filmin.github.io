@@ -19,6 +19,7 @@ import Helper from './components/Helper';
 
 import Images from './components/App';
 import SpinSearch from './Modules/SpinSearch';
+import Spinner from './Modules/Spinner';
 
 class CuTube extends React.Component {
 
@@ -50,7 +51,7 @@ class CuTube extends React.Component {
             // http://www.omdbapi.com/?i=tt3896198&apikey=af7bfde9
             params: { query: term },
         });
-console.log(response1)
+// console.log(response1)
         this.setState({
             title: response1.data.Title,
             poster: response1.data.Poster,
@@ -75,7 +76,7 @@ console.log(response1)
 
         const response = await Youtube.get('/search', {
             params: {
-                q: term
+                q: `${term} official trailer`
             }
         });
 
@@ -88,8 +89,8 @@ console.log(response1)
     }
 
     render() {
-        // var name = this.state.title + this.state.year;
         return (
+            
             <div className="container" style={{ backgroundColor: '#031b2b' }}>
                 <div className="">
 
@@ -133,11 +134,19 @@ console.log(response1)
                                 <VideoDetail video={this.state.selectedVid} />
 col-md-3 col-sm-6, vidListAlign
                                 </div> */}
-                                {/* <div className='' >
-                                    <VideoDetail />
-                                </div> */}
+                                {this.state.vids[0] === undefined ? (<div className='' >
+                                   <h2 style={{ color: 'white', textAlign: 'center', fontSize: '300px', marginTop: '-15%' }}>              <div className="spinner-border" role="status"></div>
+</h2>
+                                </div>):(<div className='' >
+                                <iframe id="video-iframe" allowFullScreen="allowfullscreen" style={{ height: '350px', width: '100%', marginTop: '2%', marginBottom: '2%' }} className="" title='video player' src={`https://www.youtube.com/embed/${this.state.vids[0].id.videoId}`} />
+
+                                </div>) }
+                            
+                            
                                 <div className='container' >
+                                    <h3 style={{ color: 'white' }}>Related Videos:</h3>
                                     <VideoList onSelectVid={this.onVidSelect} vidList={this.state.vids} />
+                                    
                                 </div>
 
                                 {/* <div className="col-md-3 col-sm-6">

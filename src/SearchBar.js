@@ -33,12 +33,13 @@ class SearchBar extends React.Component {
    
 
     render(props) {
+        console.log("sanju2",this.props);
         return (
 
             <div>
                 <nav className="navbar navbar-expand-md navbar-dark navbar-fixed-top bg-dark, navBackColor ">
-			<img className='offspin logo-adjust' src='http://icons.iconarchive.com/icons/bokehlicia/captiva/256/movie-icon.png' alt="u r watching" width='35px' height='35px' />
-                
+			{/* <img className='offspin logo-adjust' src='http://icons.iconarchive.com/icons/bokehlicia/captiva/256/movie-icon.png' alt="u r watching" width='35px' height='35px' /> */}
+      <i class="fa fa-camera-retro fa-3x" style={{ color: 'rgb(2, 203, 252)' }}></i>
                     <a href='/'><h2 className="filmIn logoName logo-nm-ad" style={{ color: '#02CBFC', marginTop: '2vh' }} >FilmIn</h2></a>
 
                     <form className="form-inline, searchBar myHomefont" onSubmit={this.onSubmitHandle}>
@@ -48,7 +49,13 @@ class SearchBar extends React.Component {
                             value={this.state.term}
                             placeholder='Search for movies ....'
                             aria-label="Search"
+                            list="search"
                         />
+                        {/* <input type="text" className="placeholding form-control" onChange={this.onEmailChange} value={email} name="email" id="email" placeholder="EMAIL" title="select email from given option" list="Emails" autocomplete="off" /> */}
+                            <datalist id="search">
+                              <option value='{this.state.user.email}'></option>
+                            </datalist>
+
 
                     </form>
                     <div className="myHomefont" style={{ marginLeft: '0.5%' }}>

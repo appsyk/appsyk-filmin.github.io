@@ -36,7 +36,7 @@ class FilmInfo extends React.Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-xs-12 text-center">
-                                    <h2 className="movie-main-title, myHomefont" style={{ color: '#F3BC0F', fontSize: '250%' }}>{this.props.title} ({this.props.year})</h2>
+                                    <h2 className="movie-main-title, myHomefont" style={{ color: '#F3BC0F', fontSize: '250%', marginBottom: '5%' }}>{this.props.title} ({this.props.year})</h2>
                                     {/* <div className="movie-genre, myHomefont" style={{ color: '#D1E8F0' }}>{this.props.genre}</div><br /> */}
                                 </div>
                             </div>

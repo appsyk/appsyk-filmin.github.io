@@ -11,7 +11,8 @@ const VideoDetail = ({ video }) => {
     }
 
     // const VidSrc = 'https://www.youtube.com/embed/' + (video.id.videoId) ;
-    const VidSrc = `https://www.youtube.com/embed/${video.id.videoId} official+trailer`;
+    const VidSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+    // console.log('asfd',video)
 
     return (
 
