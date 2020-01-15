@@ -1,4 +1,5 @@
-// import React from 'react';
+
+// import React from '../images/iron-man/iron-man43135.jpg';
 // import axios from 'axios';
 // import SearchBar from '../Modules/SearchBar';
 // import FilmInfo from './FilmInfo';
@@ -139,16 +140,17 @@ export const Data = [
 ];
 
 const Images = [
+    // {
+    //     imgUrl:'https://wallpapercave.com/wp/wp3869435.jpg',
+    //     alte:'bumblebee'
+    // },
+    // {
+    //     imgUrl:'https://images3.alphacoders.com/948/thumb-1920-948864.jpg',
+    //     alte:'venom'
+    // },
     {
-        imgUrl:'https://wallpapercave.com/wp/wp3869435.jpg',
-        alte:'bumblebee'
-    },
-    {
-        imgUrl:'https://images3.alphacoders.com/948/thumb-1920-948864.jpg',
-        alte:'venom'
-    },
-    {
-        imgUrl:'https://images8.alphacoders.com/101/thumb-1920-1010617.jpg',
+        // imgUrl:'https://images8.alphacoders.com/101/thumb-1920-1010617.jpg',
+        imgUrl:'../images/iron-man43135.jpg',
         alte: 'Ironman'
     },
     {

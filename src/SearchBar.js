@@ -33,7 +33,7 @@ class SearchBar extends React.Component {
    
 
     render(props) {
-        console.log("sanju2",this.props);
+        // console.log("sanju2",this.props);
         return (
 
             <div>
@@ -50,10 +50,11 @@ class SearchBar extends React.Component {
                             placeholder='Search for movies ....'
                             aria-label="Search"
                             list="search"
+                            autoComplete="on"
                         />
                         {/* <input type="text" className="placeholding form-control" onChange={this.onEmailChange} value={email} name="email" id="email" placeholder="EMAIL" title="select email from given option" list="Emails" autocomplete="off" /> */}
                             <datalist id="search">
-                              <option value='{this.state.user.email}'></option>
+                              {/* <option value='{this.state.user.email}'></option> */}
                             </datalist>
 
 

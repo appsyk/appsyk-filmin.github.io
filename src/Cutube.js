@@ -87,8 +87,37 @@ class CuTube extends React.Component {
     onVidSelect = (video) => {
         this.setState({ selectedVid: video });
     }
+    
+    onlikeClick = (e) => {
+        
+        var like = parseInt(localStorage.getItem("like"))
+       
+        { localStorage.getItem("like") ? (console.log(localStorage.setItem("like", like += 1))):(localStorage.setItem("like", 0)) }
+        
+        setInterval(function(){ 
+            var like = localStorage.getItem("like");
+            document.querySelector('.icon-up').innerHTML = like;
+         }, 10); 
+        
+    }
+    
+    onDislikeClick = (e) => {
+        
+        var dislike = parseInt(localStorage.getItem("dislike"))
+       
+        { localStorage.getItem("dislike") ? (console.log(localStorage.setItem("dislike", dislike += 1))):(localStorage.setItem("dislike", 0)) }
+        
+        setInterval(function(){ 
+            var dislike = localStorage.getItem("dislike");
+            document.querySelector('.icon-down').innerHTML = dislike;
+         }, 10); 
+        
+    }
 
     render() {
+        // var like = parseInt(localStorage.getItem("like"));
+        var dislike = localStorage.getItem("dislike");
+        // console.log(like)
         return (
             
             <div className="container" style={{ backgroundColor: '#031b2b' }}>
@@ -97,6 +126,12 @@ class CuTube extends React.Component {
                     <SearchBar onFormSubmitProp={this.onTermSubmit} spinStop={this.state.response} />
                     {this.state.response ? (
                         <div className='' >
+                            <div class="up-down-icon">
+    <i class="fa fa-thumbs-up fa-2x icon-up" onClick={this.onlikeClick} aria-hidden="true">{localStorage.getItem("like")}</i>
+                    
+    <span className="fa fa-2x icon-down">{localStorage.getItem("dislike")}</span><i class="fa fa-thumbs-down fa-flip-horizontal fa-2x icon-down" onClick={this.onDislikeClick} aria-hidden="true"></i>
+                                    </div>
+                                    {/*  */}
                             <div className=''>
                                 <div>
                                     <div>
@@ -122,6 +157,7 @@ class CuTube extends React.Component {
                                     </div>
                                 </div>
                                 <div><VideoDetail video={this.state.selectedVid} /></div>
+                                
                                 {/* <div className="row" style={{ margin: '20px auto' }}>
                                     <div className="col-md-offset-3 col-md-6 col-xs-12, vidRend ">
                                         <div className="embed-responsive embed-responsive-16by9">
@@ -134,9 +170,11 @@ class CuTube extends React.Component {
                                 <VideoDetail video={this.state.selectedVid} />
 col-md-3 col-sm-6, vidListAlign
                                 </div> */}
+                                
                                 {this.state.vids[0] === undefined ? (<div className='' >
-                                   <h2 style={{ color: 'white', textAlign: 'center', fontSize: '300px', marginTop: '-15%' }}>              <div className="spinner-border" role="status"></div>
-</h2>
+                                   <h2 style={{ color: 'white', textAlign: 'center', fontSize: '300px', marginTop: '-15%' }}>
+                                       <div className="spinner-border" role="status"></div>
+                                    </h2>
                                 </div>):(<div className='' >
                                 <iframe id="video-iframe" allowFullScreen="allowfullscreen" style={{ height: '350px', width: '100%', marginTop: '2%', marginBottom: '2%' }} className="" title='video player' src={`https://www.youtube.com/embed/${this.state.vids[0].id.videoId}`} />
 
