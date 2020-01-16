@@ -2,7 +2,7 @@ import React from 'react';
 import VideoItem from './VideoItem';
 
 const VideoList = ({ vidList, onSelectVid }) => {
-    const firstVid = vidList[1];
+    // const firstVid = vidList[1];
 
         
 

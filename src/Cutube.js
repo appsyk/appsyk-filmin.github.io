@@ -19,7 +19,7 @@ import Helper from './components/Helper';
 
 import Images from './components/App';
 import SpinSearch from './Modules/SpinSearch';
-import Spinner from './Modules/Spinner';
+// import Spinner from './Modules/Spinner';
 
 class CuTube extends React.Component {
 
@@ -116,7 +116,7 @@ class CuTube extends React.Component {
 
     render() {
         // var like = parseInt(localStorage.getItem("like"));
-        var dislike = localStorage.getItem("dislike");
+        // var dislike = localStorage.getItem("dislike"); 
         // console.log(like)
         return (
             

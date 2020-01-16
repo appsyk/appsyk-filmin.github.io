@@ -2,7 +2,7 @@ import './card.css';
 import React from 'react';
 // width:"50vw", height:"30vh", 
 const VideoItem = ({ video, onVideoSelect }) => {
-    const VidSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+    // const VidSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     // const FirstVidSrc = `https://www.youtube.com/embed/${video[0].id.videoId}`;
 
     // console.log('flinntesting',video[0])

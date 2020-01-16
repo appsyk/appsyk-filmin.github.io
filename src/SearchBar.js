@@ -39,7 +39,9 @@ class SearchBar extends React.Component {
             <div>
                 <nav className="navbar navbar-expand-md navbar-dark navbar-fixed-top bg-dark, navBackColor ">
 			{/* <img className='offspin logo-adjust' src='http://icons.iconarchive.com/icons/bokehlicia/captiva/256/movie-icon.png' alt="u r watching" width='35px' height='35px' /> */}
-      <i class="fa fa-camera-retro fa-3x" style={{ color: 'rgb(2, 203, 252)' }}></i>
+
+              <div className="container">
+              <i class="fa fa-film fa-3x" style={{ color: 'rgb(2, 203, 252)' }}></i>
                     <a href='/'><h2 className="filmIn logoName logo-nm-ad" style={{ color: '#02CBFC', marginTop: '2vh' }} >FilmIn</h2></a>
 
                     <form className="form-inline, searchBar myHomefont" onSubmit={this.onSubmitHandle}>
@@ -66,6 +68,8 @@ class SearchBar extends React.Component {
                             </div>
                         </div>) : (<div className='offspin'><i style={{ color: 'white' }} className="fa fa-search fa-2x float-right" onClick={this.onSubmitHandle} aria-hidden="true"></i></div>)}
                     </div>
+
+              </div>
 
                 </nav><br /><br />
             </div>
