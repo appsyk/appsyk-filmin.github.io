@@ -1,6 +1,7 @@
 import './Circle.css';
 import React from 'react';
 import Helper from './Helper';
+import notFoundPic from '../images/not-found-pic.png';
 // import Background from '../API/back_batty.jpg';
 
 
@@ -119,13 +120,13 @@ class FilmInfo extends React.Component {
                     <div className='container' style={{ textAlign: 'center', marginTop: '5%' }}>
                         <div className="row">
                             <div className="col-md-3 col-sm-6">
-                                <img src='https://static.alphacoders.com/alpha_system_360.png' alt="Oops" />
+                                <img src={notFoundPic} alt="Oops" />
                             </div>
                             <div className="col-md-6 col-sm-12" style={{ marginTop: '4%', color:'#CCE1E8' }}>
                                 <h1 className='myHomefont'>Oops!</h1>
                                 <h2 className="myHomefont">This Movie {this.props.title}is not found</h2>
                                 <h4 className="myHomefont">The movie you are looking for might have been wrong spelled or is temporarily unavailable.</h4>
-                                <h4 className="myHomefont">but you can watch these search related videos.</h4>
+                            {/*    <h4 className="myHomefont">but you can watch these search related videos.</h4>*/}
                                 <h3 className="myHomefont">thanks!</h3>
                             </div>
                         </div><br /><br /> <br /><br /><br /><br /> <br /><br />
