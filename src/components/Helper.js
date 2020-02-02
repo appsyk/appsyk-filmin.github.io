@@ -9,7 +9,7 @@ class Helper extends React.Component {
         </div>
       <div style={{ textAlign: 'center', color: '#9CE9A4' }}>
         
-        <a href="https://www.instagram.com/sanju.1910/" target="_blank" rel="noopener noreferrer" style={{ marginRight: '8px' }}>
+        <a href="https://www.instagram.com/sanjaykhtal/" target="_blank" rel="noopener noreferrer" style={{ marginRight: '8px' }}>
           <i className="fa fa-instagram fa-3x" aria-hidden="true" title='Instagram'></i>
         </a>
         <a href="https://github.com/appsyk" target="_blank" rel="noopener noreferrer" style={{ marginRight: '8px' }}>

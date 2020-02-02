@@ -57,7 +57,7 @@ class CuTube extends React.Component {
             // http://www.omdbapi.com/?i=tt3896198&apikey=af7bfde9
             params: { query: term },
         });
-// console.log(response1)
+        // console.log(response1)
         this.setState({
             title: response1.data.Title,
             poster: response1.data.Poster,
@@ -79,8 +79,7 @@ class CuTube extends React.Component {
 
         });
         console.log(this.state.title)
-
-        if(this.state.title){
+        if (this.state.title) {
             var response = await Youtube.get('/search', {
                 params: {
                     q: `${this.state.title} ${this.state.year} ${this.state.actors} movie official trailer`
@@ -88,13 +87,13 @@ class CuTube extends React.Component {
             });
             this.setState({ vids: response.data.items });
 
-        }else{
-           document.querySelector('#not-show1').style.display = 'none';
-           document.querySelector('#not-show2').style.display = 'none';
+        } else {
+            document.querySelector('#not-show1').style.display = 'none';
+            document.querySelector('#not-show2').style.display = 'none';
 
         }
 
-        
+
 
         console.log(`${this.state.title} ${this.state.year} ${this.state.actors} movie official trailer`)
 
@@ -103,33 +102,37 @@ class CuTube extends React.Component {
     onVidSelect = (video) => {
         this.setState({ selectedVid: video });
     }
-    
+
     onlikeClick = (e) => {
-        
+
         var like = parseInt(localStorage.getItem("like"))
-       
-        { localStorage.getItem("like") ? ((localStorage.setItem("like", like += 1)))
-        :(localStorage.setItem("like", 0)) }
-        
-        setInterval(function(){ 
+
+        {
+            localStorage.getItem("like") ? ((localStorage.setItem("like", like += 1)))
+            : (localStorage.setItem("like", 0))
+        }
+
+        setInterval(function () {
             var like = localStorage.getItem("like");
             document.querySelector('.icon-up').innerHTML = like;
-         }, 10); 
-        
+        }, 10);
+
     }
-    
+
     onDislikeClick = (e) => {
-        
+
         var dislike = parseInt(localStorage.getItem("dislike"))
-       
-        { localStorage.getItem("dislike") ? ((localStorage.setItem("dislike", dislike += 1)))
-        :(localStorage.setItem("dislike", 0)) }
-        
-        setInterval(function(){ 
+
+        {
+            localStorage.getItem("dislike") ? ((localStorage.setItem("dislike", dislike += 1)))
+            : (localStorage.setItem("dislike", 0))
+        }
+
+        setInterval(function () {
             var dislike = localStorage.getItem("dislike");
             document.querySelector('.icon-down').innerHTML = dislike;
-         }, 10); 
-        
+        }, 10);
+
     }
 
     render() {
@@ -138,7 +141,7 @@ class CuTube extends React.Component {
         // console.log(like)
 
         return (
-            
+
             <div className="container" style={{ backgroundColor: '#031b2b' }}>
                 <div className="">
 
@@ -146,11 +149,11 @@ class CuTube extends React.Component {
                     {this.state.response ? (
                         <div className='' >
                             <div class="up-down-icon">
-    <i class="fa fa-thumbs-up fa-2x icon-up" onClick={this.onlikeClick} aria-hidden="true">{localStorage.getItem("like")}</i>
-                    
-    <span className="fa fa-2x icon-down">{localStorage.getItem("dislike")}</span><i class="fa fa-thumbs-down fa-flip-horizontal fa-2x icon-down" onClick={this.onDislikeClick} aria-hidden="true"></i>
-                                    </div>
-                                    {/*  */}
+                                <i class="fa fa-thumbs-up fa-2x icon-up" onClick={this.onlikeClick} aria-hidden="true">{localStorage.getItem("like")}</i>
+
+                                <span className="fa fa-2x icon-down">{localStorage.getItem("dislike")}</span><i class="fa fa-thumbs-down fa-flip-horizontal fa-2x icon-down" onClick={this.onDislikeClick} aria-hidden="true"></i>
+                            </div>
+                            {/*  */}
                             <div className=''>
                                 <div>
                                     <div>
@@ -176,7 +179,7 @@ class CuTube extends React.Component {
                                     </div>
                                 </div>
                                 <div><VideoDetail video={this.state.selectedVid} /></div>
-                                
+
                                 {/* <div className="row" style={{ margin: '20px auto' }}>
                                     <div className="col-md-offset-3 col-md-6 col-xs-12, vidRend ">
                                         <div className="embed-responsive embed-responsive-16by9">
@@ -189,21 +192,21 @@ class CuTube extends React.Component {
                                 <VideoDetail video={this.state.selectedVid} />
 col-md-3 col-sm-6, vidListAlign
                                 </div> */}
-                                
-                                {this.state.vids[0] === undefined ? (<div id='not-show1' className='' >
-                                   <h2 style={{ color: 'white', textAlign: 'center', fontSize: '300px', marginTop: '-15%' }}>
-                                       <div className="spinner-border" role="status"></div>
-                                    </h2>
-                                </div>):(<div className='' id='not-show1'>
-                                <iframe id="video-iframe" allowFullScreen="allowfullscreen" style={{ height: '350px', width: '100%', marginTop: '2%', marginBottom: '2%' }} className="" title='video player' src={`https://www.youtube.com/embed/${this.state.vids[0].id.videoId}`} />
 
-                                </div>) }
-                            
-                            
+                                {this.state.vids[0] === undefined ? (<div id='not-show1' className='' >
+                                    <div class="spinner-border" style="width: 10rem; height: 10rem; font-size: 30px;" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>) : (<div className='' id='not-show1'>
+                                    <iframe id="video-iframe" allowFullScreen="allowfullscreen" style={{ height: '350px', width: 'auto', marginTop: '2%', marginBottom: '2%' }} className="" title='video player' src={`https://www.youtube.com/embed/${this.state.vids[0].id.videoId}`} />
+
+                                </div>)}
+
+
                                 <div className='container' id='not-show2'>
                                     <h3 style={{ color: 'white' }}>Related Videos:</h3>
                                     <VideoList onSelectVid={this.onVidSelect} vidList={this.state.vids} />
-                                    
+
                                 </div>
 
                                 {/* <div className="col-md-3 col-sm-6">
@@ -215,7 +218,7 @@ col-md-3 col-sm-6, vidListAlign
 
                         </div>
                     ) : (
-                            <div >
+                            <div className='maincomp'>
                                 <section id="slider">
 
                                     <div style={{ margin: '1%' }} id="carousel-example-generic" className="carousel slide carousel-fade" data-ride="carousel" data-interval="3100">
@@ -239,7 +242,7 @@ col-md-3 col-sm-6, vidListAlign
                                         <div className="carousel-inner" role="listbox" >
                                             <div className="item active">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image1} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image1} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
                                                         <div className="slider_text center ">
                                                             <h3 className='logoName'>FilmIn</h3>
@@ -250,9 +253,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image2} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image2} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text center">
+                                                        <div className="slider_text center">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
@@ -261,9 +264,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image3} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image3} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text center">
+                                                        <div className="slider_text center">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
@@ -272,9 +275,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image4} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image4} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text">
+                                                        <div className="slider_text">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
@@ -283,9 +286,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image5} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image5} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text">
+                                                        <div className="slider_text">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
@@ -294,9 +297,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image6} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image6} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text">
+                                                        <div className="slider_text">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
@@ -305,9 +308,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image7} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image7} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text">
+                                                        <div className="slider_text">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
@@ -316,9 +319,9 @@ col-md-3 col-sm-6, vidListAlign
                                             </div>
                                             <div className="item">
                                                 <div className="slider_overlay">
-                                                <img className="blog-img" src={image8} title="Wonder Woman" alt="Avatar"></img>
+                                                    <img className="blog-img" src={image8} title="Wonder Woman" alt="Avatar"></img>
                                                     <div className="carousel-caption">
-                                                    <div className="slider_text">
+                                                        <div className="slider_text">
                                                             <h3 className='logoName'>FilmIn</h3>
                                                             <h2 className='logoName'>Search for movies</h2>
                                                         </div>
