@@ -192,15 +192,15 @@ class Create extends Component {
                               <input type="text" className="form-control" value= {this.state.user.email} name="email" id="email" placeholder="EMAIL" />
                             </div>
                           </div>
-                          {/* <div class="row">
-                            <div class=" btn-group-justified" data-toggle="buttons">
-                              <label class="btn btn-success active">
+                          {/* <div className="row">
+                            <div className=" btn-group-justified" data-toggle="buttons">
+                              <label className="btn btn-success active">
                                 <input type="radio" name="options" id="name" autocomplete="off" defaultChecked /> Radio 1 (preselected)
                               </label>
-                              <label class="btn btn-info">
+                              <label className="btn btn-info">
                                 <input type="radio" name="options" id="name" autocomplete="off" /> Radio 2
                               </label>
-                              <label class="btn btn-warning">
+                              <label className="btn btn-warning">
                                 <input type="radio" name="options" id="name" autocomplete="off" /> Radio 3
                               </label>
                             </div>          

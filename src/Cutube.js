@@ -95,7 +95,7 @@ class CuTube extends React.Component {
 
 
 
-        console.log(`${this.state.title} ${this.state.year} ${this.state.actors} movie official trailer`)
+        // console.log(`${this.state.title} ${this.state.year} ${this.state.actors} movie official trailer`)
 
 
     };
@@ -108,7 +108,7 @@ class CuTube extends React.Component {
         var like = parseInt(localStorage.getItem("like"))
 
         {
-            localStorage.getItem("like") ? ((localStorage.setItem("like", like += 1)))
+            localStorage.getItem("like") ? (localStorage.setItem("like", like += 1))
             : (localStorage.setItem("like", 0))
         }
 
@@ -124,7 +124,7 @@ class CuTube extends React.Component {
         var dislike = parseInt(localStorage.getItem("dislike"))
 
         {
-            localStorage.getItem("dislike") ? ((localStorage.setItem("dislike", dislike += 1)))
+            localStorage.getItem("dislike") ? (localStorage.setItem("dislike", dislike += 1))
             : (localStorage.setItem("dislike", 0))
         }
 
@@ -148,10 +148,10 @@ class CuTube extends React.Component {
                     <SearchBar onFormSubmitProp={this.onTermSubmit} spinStop={this.state.response} />
                     {this.state.response ? (
                         <div className='' >
-                            <div class="up-down-icon">
-                                <i class="fa fa-thumbs-up fa-2x icon-up" onClick={this.onlikeClick} aria-hidden="true">{localStorage.getItem("like")}</i>
+                            <div className="up-down-icon">
+                                <i className="fa fa-thumbs-up fa-2x icon-up" onClick={this.onlikeClick} aria-hidden="true">{localStorage.getItem("like")}</i>
 
-                                <span className="fa fa-2x icon-down">{localStorage.getItem("dislike")}</span><i class="fa fa-thumbs-down fa-flip-horizontal fa-2x icon-down" onClick={this.onDislikeClick} aria-hidden="true"></i>
+                                <span className="fa fa-2x icon-down">{localStorage.getItem("dislike")}</span><i className="fa fa-thumbs-down fa-flip-horizontal fa-2x icon-down" onClick={this.onDislikeClick} aria-hidden="true"></i>
                             </div>
                             {/*  */}
                             <div className=''>
@@ -194,8 +194,8 @@ col-md-3 col-sm-6, vidListAlign
                                 </div> */}
 
                                 {this.state.vids[0] === undefined ? (<div id='not-show1' style={{textAlign:'center'}} className='' >
-                                    <div class="spinner-border" style={{ color: 'white', textAlign:'center', width: '10rem', height: '10rem', fontSize: '30px', marginTop: '15%'}} role="status">
-                                        <span class="sr-only">Loading...</span>
+                                    <div className="spinner-border" style={{ color: 'white', textAlign:'center', width: '10rem', height: '10rem', fontSize: '30px', marginTop: '15%'}} role="status">
+                                        <span className="sr-only">Loading...</span>
                                     </div>
                                      {/* <h2 style={{ color: 'white', textAlign: 'center', fontSize: '300px', marginTop: '-15%' }}>
                                        <div className="spinner-border" role="status"></div>
@@ -208,7 +208,7 @@ col-md-3 col-sm-6, vidListAlign
 
                                 <div className='container' id='not-show2'>
                                     <h3 style={{ color: 'white' }}>Related Videos:</h3>
-                                    <VideoList onSelectVid={this.onVidSelect} vidList={this.state.vids} />
+                                    <VideoList onSelectVid={this.onVidSelect} vidList={this.state.vids} key={this.state.vids} />
 
                                 </div>
 

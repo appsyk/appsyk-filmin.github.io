@@ -14,7 +14,7 @@ class FilmInfo extends React.Component {
     render(props) {
         if (this.props.response === null) {
             return (
-                <div class='maincomp' >
+                <div className='maincomp' >
                     <img src='http://www.dream-wallpaper.com/free-wallpaper/movie-wallpaper/the-dark-knight-rises-2012-wallpaper/1680x1050/free-wallpaper-12.jpg' alt="YOu are Watching..." height='800px' width='100%' />
                     <div id="notfound" >
                         <div className="notfound">
@@ -116,7 +116,7 @@ class FilmInfo extends React.Component {
             }
             else {
                 return (
-                    <div class='maincomp'>
+                    <div className='maincomp'>
                     <div className='container' style={{ textAlign: 'center', marginTop: '5%' }}>
                         <div className="row">
                             <div className="col-md-3 col-sm-6">
