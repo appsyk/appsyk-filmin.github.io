@@ -78,7 +78,7 @@ class CuTube extends React.Component {
 
 
         });
-        console.log(this.state.title)
+        // console.log(this.state.title)
         if (this.state.title) {
             var response = await Youtube.get('/search', {
                 params: {
@@ -193,12 +193,15 @@ class CuTube extends React.Component {
 col-md-3 col-sm-6, vidListAlign
                                 </div> */}
 
-                                {this.state.vids[0] === undefined ? (<div id='not-show1' className='' >
-                                    <div class="spinner-border" style="width: 10rem; height: 10rem; font-size: 30px;" role="status">
+                                {this.state.vids[0] === undefined ? (<div id='not-show1' style={{textAlign:'center'}} className='' >
+                                    <div class="spinner-border" style={{ color: 'white', textAlign:'center', width: '10rem', height: '10rem', fontSize: '30px', marginTop: '15%'}} role="status">
                                         <span class="sr-only">Loading...</span>
                                     </div>
+                                     {/* <h2 style={{ color: 'white', textAlign: 'center', fontSize: '300px', marginTop: '-15%' }}>
+                                       <div className="spinner-border" role="status"></div>
+                                    </h2> */}
                                 </div>) : (<div className='' id='not-show1'>
-                                    <iframe id="video-iframe" allowFullScreen="allowfullscreen" style={{ height: '350px', width: 'auto', marginTop: '2%', marginBottom: '2%' }} className="" title='video player' src={`https://www.youtube.com/embed/${this.state.vids[0].id.videoId}`} />
+                                    <iframe id="video-iframe" allowFullScreen="allowfullscreen" style={{ height: '350px', textAlign: 'center', width: '70%', marginTop: '2%', marginBottom: '2%' }} className="" title='video player' src={`https://www.youtube.com/embed/${this.state.vids[0].id.videoId}`} />
 
                                 </div>)}
 
